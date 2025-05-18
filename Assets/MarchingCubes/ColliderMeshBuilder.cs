@@ -136,7 +136,9 @@ namespace MarchingCubes
                 }
 
                 int triangleCount = request.GetData<int>()[0];
+                triangleCount = Mathf.Min(triangleCount, _triangleBudget);
                 int vertexCount = triangleCount * 3;
+                
 
                 CreatePositionAndIndexReadbacks(vertexCount, onComplete);
             })
